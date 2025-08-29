@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f213bb90005142348a16a6df33c57c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerCamera: {fileID: 5633603751595077995}
   _movementController: {fileID: 8805112413889231974}
   m_focus: {fileID: 79670007956587842}
   m_interaction: {fileID: 1250728390110202114}

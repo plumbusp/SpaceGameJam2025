@@ -14,7 +14,7 @@ namespace SGJ25.LunarGame.States
             PlayerController playerController = picker.GetComponentInParent<PlayerController>();
             if (playerController != null)
             {
-                playerController.StateMachine.SetState(new ComputerState(this));
+                playerController.StateMachine.SetState(new ComputerState(this, playerController));
             }
         }
     }
