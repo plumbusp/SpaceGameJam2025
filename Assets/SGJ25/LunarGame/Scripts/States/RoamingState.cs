@@ -10,6 +10,7 @@ namespace SGJ25.LunarGame.States
         }
         public void Enter()
         {
+            m_playerController.PlayerCamera.gameObject.SetActive(true);
         }
 
         public void Update()
@@ -21,6 +22,7 @@ namespace SGJ25.LunarGame.States
 
         public void Exit()
         {
+            m_playerController.PlayerCamera.gameObject.SetActive(false);
         }
     }
 }
