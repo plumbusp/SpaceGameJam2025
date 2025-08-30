@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject m_body;
+    
     private PlayerStaStateMachine _playerStaStateMachine;
 
     [SerializeField] Camera m_playerCamera;
@@ -20,6 +22,10 @@ public class PlayerController : MonoBehaviour
     public Camera PlayerCamera => m_playerCamera;
     public PlayerStaStateMachine StateMachine => _playerStaStateMachine;
 
+    public void EnableBody(bool enable)
+    {
+        m_body.gameObject.SetActive(enable);
+    }
     private void Start()
     {
         _playerStaStateMachine = new PlayerStaStateMachine();
