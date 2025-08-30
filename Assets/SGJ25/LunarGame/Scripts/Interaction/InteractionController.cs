@@ -13,7 +13,7 @@ namespace SGJ25.LunarGame.Interaction
     {
         [SerializeField] private float m_interactionDistance = 3f;
         [SerializeField] private Camera m_playerCamera;
-
+        
         private void TryInteract(InteractionType type)
         {
             int layerMask = ~LayerMask.GetMask("Player");
