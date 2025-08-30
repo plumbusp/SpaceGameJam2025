@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace SGJ25.LunarGame.States
 {
     public class RoamingState : IPlayerState
@@ -10,6 +12,9 @@ namespace SGJ25.LunarGame.States
         }
         public void Enter()
         {
+            m_playerController.EnableBody(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             m_playerController.PlayerCamera.gameObject.SetActive(true);
         }
 
@@ -22,6 +27,7 @@ namespace SGJ25.LunarGame.States
 
         public void Exit()
         {
+            m_playerController.EnableBody(false);
             m_playerController.PlayerCamera.gameObject.SetActive(false);
         }
     }

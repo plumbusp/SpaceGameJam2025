@@ -4,19 +4,21 @@ namespace SGJ25.LunarGame.States
 {
     public class ComputerState : IPlayerState
     {
-        private Computer _computer;
+        private Computer m_computer;
         private PlayerController m_playerController;
         
         public ComputerState(Computer Computer, PlayerController playerController)
         {
-            _computer = Computer;
+            m_computer = Computer;
             m_playerController = playerController;
 
         }
         public void Enter()
         {
-            _computer.Camera.gameObject.SetActive(true);
-            
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            m_computer.Camera.gameObject.SetActive(true);
+            m_computer.TerminalController.OnEnter();
         }
 
         public void Update()
@@ -29,7 +31,8 @@ namespace SGJ25.LunarGame.States
 
         public void Exit()
         {
-            _computer.Camera.gameObject.SetActive(false);
+            m_computer.Camera.gameObject.SetActive(false);
+            m_computer.TerminalController.OnLeave();
 
         }
     }
